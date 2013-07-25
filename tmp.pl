@@ -6,6 +6,45 @@
 
 
 
+
+=pod
+# クロージャ
+sub func
+{
+  #ダイナミックスコープでは値を取得できない
+  #local $xxx = $_[0];
+  my $xxx = $_[0];
+  my $ff = sub
+  {
+    my $ret = $xxx + $_[0];
+    return $ret;
+  };
+  
+  return $ff;
+};
+
+$clo = &func(4);
+print $clo->(3);
+=cut
+
+=pod
+# 無名関数
+$func = sub { return $_[0] + 2; };
+print $func->(3);
+=cut
+
+
+=pod
+# サブルーチン
+sub func
+{
+  print "sususb". $_[0];
+}
+
+&func("value");
+=cut
+
+
 =pod
 # ファイルopen + csv
 my $persons = [];
