@@ -6,7 +6,8 @@
 
 
 
-
+gawk 'BEGIN { print "Hell gawk" }'
+awk 'BEGIN { print "Hell awk" }'
 
 
 : <<'#_EOF_'
