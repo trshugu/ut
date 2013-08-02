@@ -2,6 +2,8 @@
 */
 
 
+
+
 /*
 -- pl/pgsql
 create or replace function DecToNshin
@@ -43,13 +45,14 @@ drop function DecToNshin
 
 /*
 -- テンポラリ
-create temp table tmp (one int, two int);
+create temporary table tmp (one int, two int);
 
 insert into tmp(one, two) values(1,2);
 insert into tmp(one, two) values(10,20);
 
 select * from tmp;
 */
+
 
 
 --変数のグループ名(変数名1, 変数名2, ...) AS (

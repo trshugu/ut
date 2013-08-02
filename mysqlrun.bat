@@ -1,0 +1,1 @@
+mysql --user=root --password=12121212 -t tmp < tmp.sql
