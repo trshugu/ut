@@ -2,8 +2,43 @@
 */
 
 
+/*
+-- pl/pgsql
+create or replace function DecToNshin
+(dec_num int,
+ n_shin int)
+ returns varchar(32) as $$
 
+-- 10進数→n進数
 
+declare
+  ltr          char(36) default '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  w_dec_num    int;
+  amari        int;
+  w_DecToNshin varchar(32);
+
+begin
+  w_DecToNshin:='';
+  w_dec_num:=dec_num;
+  
+  while w_dec_num>=n_shin loop
+    amari:=w_dec_num%n_shin; -- 剰余
+    w_DecToNshin:=substr(ltr,amari+1,1)||w_DecToNshin;
+    w_dec_num:=w_dec_num/n_shin;
+  end loop;
+  
+  w_DecToNshin:=substr(ltr,w_dec_num+1,1)||w_DecToNshin;
+  return w_DecToNshin;
+end;
+
+$$ language 'plpgsql';
+
+select DecToNshin(100,16);
+
+drop function DecToNshin
+(dec_num       int,
+  n_shin        int);
+*/
 
 
 /*
