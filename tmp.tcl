@@ -3,6 +3,40 @@ if 0 {
 
 
 
+if 0 {
+pack [button .b -text ボタン -command exit]
+}
+
+if 0 {
+package require dde
+dde servername foo
+pack [entry .e -textvariable var]
+}
+
+if 0 {
+package require msgcat 1.0
+namespace import msgcat::*
+msgcat::mcload [file join [file dirname [info script]] msg]
+set env(LANG) ja_JP
+pack [button .b -text [mc "Push Me"]]
+}
+
+
+if 0 {
+package require dde
+button .b -text Send -command {
+    dde execute -async TclEval foo {set var Hello!}
+}
+pack .b
+}
+
+if 0 {
+}
+# tk必須(wishで)
+button .b -text {押してね} -command {
+    tk_messageBox -message {こんにちは}
+}
+pack .b
 
 if 0 {
 # #記号（注釈行）
