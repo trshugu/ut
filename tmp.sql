@@ -5,6 +5,24 @@
 
 
 /*
+-- バインド変数
+create or replace function fun() returns int
+as $$
+  declare
+    aaa int := 1;
+  begin
+    aaa := 1 + @aaa;
+    return @aaa;
+  end;
+$$ language plpgsql;
+
+select fun();
+select fun();
+
+drop function fun();
+*/
+
+/*
 -- pl/pgsql
 create or replace function DecToNshin
 (dec_num int,
