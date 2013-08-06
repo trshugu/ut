@@ -2,7 +2,10 @@
 */
 
 
-
+/*
+-- コメント
+comment on table tmp is 'asfsdf';
+*/
 
 /*
 -- バインド変数
