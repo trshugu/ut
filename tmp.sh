@@ -6,8 +6,16 @@
 
 
 
+: <<'#_EOF_'
+# “üo—Í
+#./shell.sh > out.txt 2> err.txt
+./shell.sh > out.txt 2>&1
+#_EOF_
+
+: <<'#_EOF_'
 gawk 'BEGIN { print "Hell gawk" }'
 awk 'BEGIN { print "Hell awk" }'
+#_EOF_
 
 
 : <<'#_EOF_'
