@@ -12,8 +12,8 @@ create table btf
 
 /*
 insert into btf (id,name)values(1,'asdf');
-select * from btf;
 */
+select * from btf;
 
 /*
 -- コメント
