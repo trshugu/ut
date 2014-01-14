@@ -3,6 +3,19 @@
 
 
 /*
+create table btf
+(
+  id INT(2),
+  name VARCHAR(10)
+);
+*/
+
+/*
+insert into btf (id,name)values(1,'asdf');
+select * from btf;
+*/
+
+/*
 -- コメント
 comment on table tmp is 'asfsdf';
 */
