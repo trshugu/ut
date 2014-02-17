@@ -7,6 +7,29 @@
 
 
 
+
+
+=pod
+# 英数字のランダム文字列
+$length = 6;
+
+@char_tmp=();
+
+# 配列にランダム生成する対象の文字列を格納
+push @char_tmp, ('a'..'z');
+push @char_tmp, ('A'..'Z');
+push @char_tmp, (0..9);
+
+# 指定文字数分、ランダム文字列を生成する
+$rand_str_tmp = '';
+for ($i=1; $i<=$length; $i++) {
+  $rand_str_tmp .= $char_tmp[int(rand($#char_tmp+1))];
+}
+
+print $rand_str_tmp;
+=cut
+
+
 =pod
 # クロージャ
 sub func
