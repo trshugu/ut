@@ -7,10 +7,89 @@
 
 
 : <<'#_EOF_'
+# startstopなどの引数による処理分岐
+start() {
+  echo "staaa"
+  return 0
+}
+
+stop() {
+  echo "stoooo"
+  return 1
+}
+
+case "$1" in
+  start)
+    start
+    ;;
+  stop)
+    stop
+    ;;
+  *)
+    echo $"Usage: front {start|stop}"
+esac
+#_EOF_
+
+
+: <<'#_EOF_'
+# 処理の終了を待ち結果を返却する
+toush() {
+  touch testestest
+  echo "touch!"
+  sleep 1
+}
+
+dele() {
+  rm testestest
+  echo "delete!"
+}
+
+toush
+dele
+echo "done"
+toush
+dele
+echo "done"
+toush
+dele
+toush
+dele
+toush
+dele
+toush
+dele
+echo "alldone"
+#_EOF_
+
+
+
+: <<'#_EOF_'
+# テキストファイルを環境変数に代入
+# 環境変数をもとにプロセスを終了
+read RUNNINGPID < RUNNING_PID
+kill $RUNNINGPID
+#_EOF_
+
+
+
+
+: <<'#_EOF_'
+# ファイルを読み込んでそのPIDをKILL
+. /etc/rc.d/init.d/functions
+
+pidfile=${RUNNING_PID}
+killproc -p ${pidfile}
+# killprocの利用が高負荷
+#_EOF_
+
+
+
+: <<'#_EOF_'
 # 入出力
 #./shell.sh > out.txt 2> err.txt
 ./shell.sh > out.txt 2>&1
 #_EOF_
+
 
 : <<'#_EOF_'
 gawk 'BEGIN { print "Hell gawk" }'
