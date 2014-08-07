@@ -4,8 +4,8 @@
 loop() ->
   receive
     hello ->
-      io:format("Hello!~n"),
+      io:format("g2 Hell~n"),
       loop();
     bye ->
-      io:format("See you!~n")
+      io:format("CUa!~n")
   end.

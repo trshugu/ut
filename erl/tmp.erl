@@ -1,12 +1,74 @@
 -module(tmp). -compile(export_all).
 
-
 main(_)->tmp(). tmp() ->
 %%
 %%io:format(),
 
 
 
+
+
+
+
+%% sum関数
+%io:format("~w~n", [sum(3)]),
+
+
+%% 変換
+%list_to_integer("12"),
+%list_to_float("123.5"),
+%integer_to_list(12),
+%float_to_list(123.5),
+
+%% リスト内包
+%[X * X || X <- [1, 2, 3, 4, 5]],  % [1, 4, 9, 16, 25]
+%[X || X <- [1, 2, 3, 4, 5], X rem 2 =:= 1],  % [1, 3, 5]
+
+
+%% filter関数
+%% [1, 3, 5] - 奇数のみのリストを作る.
+%lists:filter(fun(X) -> X rem 2 =:= 1 end, [1, 2, 3, 4, 5]),
+
+%% map関数
+%% [1, 4, 9, 16 ,25] - リストの要素をそれぞれ2乗にする.
+%lists:map(fun(X) -> X * X end, [1, 2, 3, 4, 5]),
+
+%square(X) -> X * X.
+%lists:map(fun square/1, [1, 2, 3, 4, 5]),
+
+
+%% 真偽値
+%io:format(not true),
+%io:format("~n"),
+%io:format(true or false),
+%io:format("~n"),
+%io:format(true and false),
+%io:format("~n"),
+
+
+%% ビット演算子
+%1 bor 2,   % 3
+%5 band 3,  % 1
+%5 bxor 3,  % 6
+%bnot 3,    % -4
+%1 bsl 2,   % 4 - 左シフト
+%16 bsr 2,  % 4 - 右シフト
+
+
+
+
+
+%% 並行プログラミング
+%io:format("stst~n"),
+%Pid = spawn(fun sev:loop/0),
+%Pid = spawn(sev, loop, []),
+
+%io:format(Pid ! hello),
+%Pid ! hello,
+%Pid ! bye,
+%io:format("enen~n"),
+%io:format("enen~n"),
+%io:format("enen~n"),
 
 
 
@@ -198,3 +260,11 @@ io:format("~n").
 %% for文
 %for(M, M, F) -> [F(M)];
 %for(I, M, F) -> [F(I) | for(I+1, M, F)].
+
+%% sun関数
+%sum(X)->
+%if
+%  X==0 -> 0;
+%  X/=0 -> X + sum(X-1)
+%end.
+
