@@ -1,5 +1,6 @@
 @echo off
-ghc.exe --make tmp.hs
-tmp
+runghc tmp.hs
+rem ghc.exe --make tmp.hs
+rem tmp
 
 
