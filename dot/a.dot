@@ -1,0 +1,10 @@
+digraph G {
+  graph [charset="UTF-8"]
+  GrandpaA -> Papa [label="rain"];
+  GrandmaA -> Papa [label="ええｒ"];
+  GrandpaB -> Mama;
+  GrandmaB -> Mama;
+  Papa -> You;
+  Mama -> You;
+  Mama -> ひらが;
+}

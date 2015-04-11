@@ -1,0 +1,1 @@
+"C:\Users\trahugu\Downloads\release\bin\dot.exe" -Tpng tmp.dot -o tmp.png

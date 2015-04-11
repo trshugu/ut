@@ -1,0 +1,26 @@
+digraph G {
+    graph [ranksep=0.0]
+    edge [style=invis]
+    n1->n2->n3->n4->n5->n6->n7
+    
+    //MS UI Gothic
+    n1 [label="日本語 (MS UI Gothic)", fontname="MS UI Gothic"]
+    
+    //ＭＳ ゴシック
+    n2 [label="日本語 (ＭＳ ゴシック)", fontname="ＭＳ ゴシック"]
+    
+    //ＭＳ 明朝
+    n3 [label="日本語 (ＭＳ 明朝)", fontname="ＭＳ 明朝"]
+    
+    //IPA ゴシック (要インストール)
+    n4 [label="日本語 (IPAGothic)", fontname="IPAGothic"]
+    
+    //IPA Pゴシック (要インストール)
+    n5 [label="日本語 (IPAPGothic)", fontname="IPAPGothic"]
+    
+    //IPA明朝 (要インストール)
+    n6 [label="日本語 (IPAMincho)", fontname="IPAMincho"]
+    
+    //IPA P明朝 (要インストール)
+    n7 [label="日本語 (IPAPMincho)", fontname="IPAPMincho"]
+}
