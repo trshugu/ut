@@ -5,3 +5,4 @@ RUN unzip master.zip
 WORKDIR ut-master/docker/express
 RUN pwd
 RUN npm i
+CMD npm start
