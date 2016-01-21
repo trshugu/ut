@@ -5,6 +5,14 @@
 
 
 #|
+; timeマクロ
+(time
+  (printf "aaa"))
+|#
+
+
+
+#|
 (define x 1)
 (if (< x 0) (- x) x)
 |#
