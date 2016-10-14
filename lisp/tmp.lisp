@@ -4,6 +4,40 @@
 
 
 
+
+
+
+
+
+#|
+(car (cons 111 222))
+(cdr (cons 333 444))
+|#
+
+
+#|
+(define (length x) ( cdr(x) ))
+(length( cons `4 `(6) ))
+|#
+
+
+#|
+(define (suu ii)(+ 2 ii))
+
+(suu 3)
+|#
+
+
+
+
+#|
+(define sel (cons 1 (cons 2 (cons 3 false))))
+(car sel)
+(cdr sel)
+|#
+
+
+
 #|
 ; timeマクロ
 (time
