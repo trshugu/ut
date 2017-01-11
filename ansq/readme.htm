@@ -1,0 +1,288 @@
+<HTML><HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=x-sjis"
+      HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<TITLE>Ans.Q の チュートなリアル</TITLE>
+<BODY TEXT="black" BGCOLOR="white" LINK="blue">
+<BASEFONT FACE="ＭＳ ゴシック" SIZE=3>
+
+<CENTER><I>Ａｎｓ．Ｑ の チュートなリアル</I></CENTER>
+<P>
+<DL>
+<DT>
+<FONT COLOR="red"><B>〇 はじめに…</B></FONT><P>
+<DD>
+このソフトウェアは条件付きフリーソフトウェアです。ちゃんと条件（スクリプト規定）を守ってくださいね。<BR>
+<P>
+<DT>
+<FONT COLOR="red"><B>〇 Ans.Q とは</B></FONT><P>
+<DD>
+周囲の方々に押されて配付したというＣＧＩです。<BR>
+とりあえず使い方次第みたいで、盛り上がりすぎてるサイトとすぐなくなってしまうサイトと大きく別れてます（笑）<BR>
+昔、僕のサイトに設置した際には爆笑でしたが…、そうなる保証はありません(^-^;;<BR>
+とりあえず、前バージョンから一新していますので、Ans.Qファンの方（たぶん居るはず）は納得できるんじゃないでしょうかねぇ（しないだろうなぁ。）<BR>
+まぁ、適当に…
+<P>
+<DT>
+<FONT COLOR="red"><B>〇 設置解説</B></FONT><P>
+<DD>
+CGI-StaTion には「<A HREF="http://www7.big.or.jp/~jawa/tips/">初心者のための設置講座</A>」があります。<BR>
+初めての方は、そちらをご覧ください。<BR>
+ここでは設置経験のある方のための解説を行います。
+<P>
+<DT>
+<FONT COLOR="red"><B>〇 ファイル構成</B></FONT><P>
+<DD>
+全てのファイルを同じディレクトリに置いて下さい。<BR>
+そのディレクトリのパーミッション（アクセス権）を <FONT COLOR="darkviolet">777</FONT> に設定して下さい。<BR>
+プロバイダによって指定されている場合もあります。
+<P>
+<DT>
+<FONT COLOR="red"><B>〇 各ファイルの簡単な説明と補足</B></FONT><P>
+<DD>
+<DL>
+<DT>
+<FONT COLOR="darkgreen">※ readme.htm</FONT>
+<P>
+<DD>
+このファイルです。ＦＴＰ転送する必要はありません。<BR>
+Ａｎｓ．Ｑ全体の説明・注意等が書かれています。
+<P>
+<DT>
+<FONT COLOR="darkgreen">※ ansq.cgi</FONT>（<FONT COLOR="darkviolet">これにリンクをはると動作します。</FONT>）
+<P>
+<DD>
+ＣＧＩのスクリプトプログラムです。<BR>
+ＦＴＰで転送する時は<FONT COLOR="darkviolet">アスキー</FONT>（テキスト）モードで行い、パーミッション（アクセス権）を <FONT COLOR="darkviolet">755</FONT> に設定して下さい。
+<P>
+<DT>
+<FONT COLOR="darkgreen">※ ansq.log</FONT>
+<P>
+<DD>
+記録用のファイルです。<BR>
+ＦＴＰで転送する時は<FONT COLOR="darkviolet">アスキー</FONT>（テキスト）モードで行い、パーミッション（アクセス権）を <FONT COLOR="darkviolet">666</FONT> に設定して下さい。
+<P>
+<DT>
+<FONT COLOR="darkgreen">※ jcode.pl</FONT>
+<P>
+<DD>
+日本語文字コード変換ライブラリです。<BR>
+このファイルは決していじらないで下さい。<BR>
+ＦＴＰで転送する時は<FONT COLOR="darkviolet">アスキー</FONT>（テキスト）モードで行い、パーミッション（アクセス権）を <FONT COLOR="darkviolet">755</FONT> に設定して下さい。
+</DL>
+<P>
+<DT>
+<FONT COLOR="red"><B>〇 テスト設置する</B></FONT><P>
+<DD>
+まずはテスト設置してみましょう。<BR>
+<FONT COLOR="darkgreen">xxxxx.cgi</FONT> というファイルをエディタで開きます。
+<P>
+1:<FONT COLOR="darkviolet">#!/usr/local/bin/perl</FONT><BR>
+2:<BR>
+3:#| xxxxxxxxxx Version x.x<BR>
+4:#| This script is free.<BR>
+<DIV ALIGN="right">（左の数字は行数を表します。）</DIV><BR>
+１行目の <FONT COLOR="darkviolet">#!/usr/local/bin/perl</FONT> はプロバイダによって異なる場合があるので、プロバイダに合わせて書き換えて下さい。<BR>
+書き換えたら、一度、ＦＴＰで転送し、パーミッション（アクセス件）を変更して動作確認を行って下さい、
+<P>
+<DT>
+<FONT COLOR="red"><B>〇 トラブルシューティング</B></FONT><P>
+<DD>
+どうしてもうまくいかない、エラーが頻発する、文字化けがある等、不都合がある場合はトラブルシューティングをご利用ください。<BR>
+<A HREF="http://www7.big.or.jp/~jawa/">CGI-StaTion</A> にはトラブルシューティングのページがあります。<BR>
+トップページのクイックリンクでトラブルシューティングを選択して下さい。<BR>
+「トラブルシューティングでもあかんわぁ」って方は、サポート掲示板をご利用下さい。
+<P>
+<DT>
+<FONT COLOR="red"><B>〇 オプションの設定</B></FONT><P>
+<DD>
+<DL>
+<DT><FONT COLOR="darkgreen">あなたの名前</FONT>:$admin_name = '<FONT COLOR="darkvioret">～</FONT>';
+<P>
+<DD>
+掲示板の管理者（あなた）の名前を書き込んで下さい。<BR>
+<FONT COLOR="darkvioret">～</FONT> の部分<B>のみ</B>を書き換えてください。
+<P>
+<DT><FONT COLOR="darkgreen">管理人投稿用パスワード</FONT>:$admin_pass = '<FONT COLOR="darkvioret">～</FONT>';
+<P>
+<DD>
+管理人の名前で投稿され、イタズラされないようにするためのものです。<BR>
+通常、上の掲示板の管理者で指定した名前で投稿しようとすると拒否され、このパスワードを使うことで投稿が可能となります。<BR>
+つまり、あなたの名前で投稿する場合は、あなたの名前の代りにこのパスワードを使うと良いのです。<BR>
+<FONT COLOR="darkvioret">～</FONT> の部分<B>のみ</B>を書き換えてください。
+<P>
+<DT><FONT COLOR="darkgreen">あなたのメールアドレス</FONT>:$admin_email = '<FONT COLOR="darkvioret">～</FONT>';
+<P>
+<DD>
+掲示板の管理者（あなた）のメールアドレスを書き込んで下さい。<BR>
+<FONT COLOR="darkvioret">～</FONT> の部分<B>のみ</B>を書き換えてください。
+<P>
+<DT><FONT COLOR="darkgreen"><B>マスターパスワード</B></FONT>:$master = '<FONT COLOR="darkvioret">～</FONT>';
+<P>
+<DD>
+管理用エディタを使うためのパスワードです。<BR>
+<FONT COLOR="darkvioret">半角英数 8 文字</FONT>程度で<B>必ず書き換えて</B>下さい。<BR>
+このパスワードを利用すると、投稿を削除できるようになります。
+<P>
+<DT><FONT COLOR="darkgreen">最大保字数</FONT>:$reg_max = <FONT COLOR="darkvioret">n</FONT>;
+<P>
+<DD>
+投稿を何件まで記録するかを設定できます。<BR>
+デフォルトでは 300 件で、これ以上の投稿があった場合、古い投稿から削除されていきます。<BR>
+<FONT COLOR="darkvioret">n</FONT> の部分<B>のみ</B>を半角数字で指定して下さい。
+<P>
+<DT><FONT COLOR="darkgreen">１ページに表示する数</FONT>:$page_max = <FONT COLOR="darkvioret">n</FONT>;
+<P>
+<DD>
+この掲示板はページという概念があります。<BR>
+をページという単位で別け、１ページに表示する投稿の数を指定できます。<BR>
+デフォルトでは 30 件ずつ表示されます。<BR>
+<FONT COLOR="darkvioret">n</FONT> の部分<B>のみ</B>を半角数字で指定して下さい。
+<P>
+<DT><FONT COLOR="darkgreen">タイトル</FONT>:$title = "<FONT COLOR="darkvioret">～</FONT>";
+<P>
+<DD>
+掲示板のタイトルです。<BR>
+タグは使わないで下さい。<BR>
+<FONT COLOR="darkvioret">～</FONT> の部分<B>のみ</B>を書き換えて下さい。
+<P>
+<DT><FONT COLOR="darkgreen">&lt;BODY&gt;タグ</FONT>:$body = '&lt;BODY <FONT COLOR="darkvioret">～</FONT>&gt;';
+<P>
+<DD>
+&lt;BODY&gt;タグの設定です。<BR>
+<FONT COLOR="darkvioret">～</FONT> の部分<B>のみ</B>を書き換えて下さい。
+<P>
+<DT><FONT COLOR="darkgreen">色関係</FONT>:$xxxxx_color = '<FONT COLOR="darkvioret">～</FONT>';
+<P>
+<DD>
+タイトル等の色を設定できます。<BR>
+#xxxxxxx といった 16進数で表現しても、blue といった指定の色で表現しても構いません。<BR>
+<FONT COLOR="darkvioret">～</FONT> の部分<B>のみ</B>を書き換えて下さい。
+<P>
+<P>
+<DT><FONT COLOR="darkgreen">不正アクセス防止</FONT>:$check_url = "<FONT COLOR="darkvioret">～</FONT>";
+<P>
+<DD>
+セキュリティ機能です。<BR>
+他サイトからの掲示板破壊用のプログラムを拒絶します。<BR>
+滅多なことはないので、普段は利用しないで下さい。<BR>
+使用する場合は、ここに、この CGI の正確な URL を記述します。<BR>
+ブラウザ等によってはこれだけで投稿できなくなることもあります。
+<P>
+<DT><FONT COLOR="darkgreen">イタズラ防止</FONT>:@check_ipad = (<FONT COLOR="darkvioret">～</FONT>);
+<P>
+<DD>
+セキュリティ機能です。<BR>
+イタズラをする人の投稿を拒否する機能です。<BR>
+イタズラする人の IPアドレス を記述することで、その IPアドレス からの投稿はできなくなります。<BR>
+IP アドレスは管理用エディタを起動するとわかります。<BR>
+<TT>[<INPUT TYPE="checkbox">削除]　[<INPUT TYPE="radio">編集]　<FONT COLOR="red">[xxxxxxxx.ne.jp(<B>xxx.xxx.xxx.xxx</B>)]</FONT></TT><BR>
+の、<FONT COLOR="red"><B>xxx.xxx.xxx.xxx</B></FONT>の部分です。<BR>
+この数字を書きます。<BR>
+@check_ipad = ('xxx.xxx.xxx.xxx');<BR>
+数字は '' の中に書き込むようにしてください。<BR>
+複数の場合は , で区切って列挙します。<BR>
+@check_ipad = ('xxx.xxx.xxx.xxx','xxx.xxx.xxx.xxx','xxx.xxx.xxx.xxx');<BR>
+これで、この IPアドレスからの投稿はできなくなります。<BR>
+また、ダイアルアップ等で最後の番号が毎回変ることがあります。この場合、<BR>
+例）<BR>
+123.456.789.010<BR>
+123.456.789.011<BR>
+123.456.789.012 …と変る場合
+<P>
+最初の３つだけを記入すると、４つめはなんでも良くなります。<BR>
+@check_ipad = ('123.456.789');
+<P>
+IPアドレスで拒否するので、同じ IPアドレス の人全てを拒否してしまうことに注意してください
+<P>
+<DT><FONT COLOR="darkgreen">匿名プロクシ制限</FONT>:$check_proxy = <FONT COLOR="darkvioret">n</FONT>;
+<P>
+<DD>
+セキュリティ機能です。<BR>
+匿名プロクシを使って悪戯する荒らし対策の機能です。<BR>
+この匿名プロクシ制限と、上の IP アドレス制限で、ほとんどの悪戯相手を撃退可能です。<BR>
+ただし、このプロクシ制限は関係ない普通の人をも、多く巻き込みます。<BR>
+プロクシ経由全てを無差別に撃退するため、悪戯でよほど困ってない限り使用しないでください。<BR>
+<FONT COLOR="darkvioret">n</FONT> の値を 1 にすれば、撃退します。<BR>
+0 に戻せば、通常の状態に戻ります。
+<P>
+<DT><FONT COLOR="darkgreen">IPアドレスからリモートホストの取得</FONT>:$gethostaddr = <FONT COLOR="darkvioret">n</FONT>;
+<P>
+<DD>
+一部のプロバイダでは、リモートホストをそのままでは取得できません。<BR>
+もし、リモートホストが数字で表示されるようなら、ここの設定を 1 に設定してみてください。<BR>
+なお、通常は 0 のままにしてください。<BR>
+この方法は特殊な操作をしますので、対応していないサーバーでは致命的なエラーとなるためです。<BR
+<FONT COLOR="darkvioret">n</FONT> の部分<B>のみ</B>を 0 か 1 に設定して下さい。
+<P>
+<P>
+<DT><FONT COLOR="darkgreen">jcode.pl のある場所</FONT>:$jcode = '<FONT COLOR="darkvioret">～</FONT>';
+<P>
+<DD>
+jcode.pl（日本語変換ライブラリ）のある場所（パス）を指定します。<BR>
+プロバイダによって変えるように指示がある場合にのみ、プロバイダの指示に従って書き換えて下さい。<BR>
+通常は書き換える必要はありません。<BR>
+<FONT COLOR="darkvioret">～</FONT> の部分<B>のみ</B>を書き換えて下さい。
+<P>
+<DT><FONT COLOR="darkgreen">この CGI のファイルの名前</FONT>:$cginame = '<FONT COLOR="darkvioret">～</FONT>';
+<P>
+<DD>
+ＣＧＩファイルの名前を書いておきます。<BR>
+プロバイダによってファイル名を書き換えるように指示がある場合にのみ、プロバイダの指示に従って書き換えて下さい（例：xxxxx.cgi は xxxxx.pl に書き換えるよう指示された時など）<BR>
+通常は書き換える必要はありません。<BR>
+<FONT COLOR="darkvioret">～</FONT> の部分<B>のみ</B>を書き換えて下さい。
+<P>
+<DT><FONT COLOR="darkgreen">記録用ファイル</FONT>:$logfile = '<FONT COLOR="darkvioret">～</FONT>';
+<P>
+<DD>
+記録用ファイルの設置した場所（パス）を指定します。<BR>
+プロバイダによって変えるように指示がある場合にのみ、プロバイダの指示に従って書き換えて下さい。<BR>
+通常は書き換える必要はありません。<BR>
+<FONT COLOR="darkvioret">～</FONT> の部分<B>のみ</B>を書き換えて下さい。
+<P>
+<DT><FONT COLOR="darkgreen">鍵ファイル</FONT>:$lock1,$lock2 = '<FONT COLOR="darkvioret">～</FONT>';
+<P>
+<DD>
+鍵ファイルを作成させる場所を指定します。<BR>
+鍵ファイルは自動的に作成・削除されるため、通常は書き換える必要はありません。<BR>
+しかし、プロバイダから注意がある場合は書き換えてください。<BR>
+<FONT COLOR="darkvioret">～</FONT> の部分<B>のみ</B>を書き換えて下さい。
+<P>
+<DT><FONT COLOR="darkgreen">鍵ファイルの使用</FONT>:$lock_flag = <FONT COLOR="darkvioret">n</FONT>;
+<P>
+<DD>
+鍵ファイルの使用の有無は決めます。<BR>
+プロバイダのサーバーが WinNT の場合、使わない方が良いです。<BR>
+通常は変更する必要はありません（使って下さい）<BR>
+<FONT COLOR="darkvioret">n</FONT> の部分<B>のみ</B>を 0 か 1 に設定して下さい。
+</DL>
+<P>
+<DT>
+<FONT COLOR="red"><B>〇 最後に…</B></FONT><P>
+<DD>
+これらのＣＧＩの作成には多大な労力と資金がかかっています（いや、本当に…）<BR>
+ちゃんと規定とか守って気持ち良く使って下さいです。<P>
+で、フリーウェアなんですが、寄付は多いに歓迎しております。<BR>
+寄付は郵便局でお願いです。
+<PRE>
+記号 14630    番号 3688441
+おなまえ 中澤 重人 （なかざわ しげと）
+</PRE>
+ダウンロードありがとうございました。<BR>
+これからも、僕のページともどもよろしくお願いします。
+<P>
+</DL>
+
+<TABLE BGCOLOR="#EEEEEE" WIDTH=100%><TD ALIGN="right">
+<TABLE><TD><TT>
+<FONT COLOR="red">
+Ans.Q version 1.4
+</FONT>
+<P>
+Script written by Shigeto Nakazawa.<BR>
+<A HREF="http://www7.big.or.jp/~jawa/">http://www7.big.or.jp/~jawa/</A><BR>
+<A HREF="mailto:jawa@big.or.jp">jawa@big.or.jp</A>
+</TT></TD></TABLE>
+</TD></TABLE>
+<DT>
+
+
