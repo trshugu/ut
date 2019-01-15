@@ -1,2 +1,2 @@
 @echo off
-go run tmp.go
+"C:\Program Files\go\bin\go.exe" run tmp.go
