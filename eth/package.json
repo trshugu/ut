@@ -1,0 +1,16 @@
+{
+  "name": "eth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tmp.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "big-integer": "^1.6.47",
+    "request": "^2.88.0",
+    "web3": "^1.2.1"
+  }
+}

@@ -6,4 +6,5 @@ geth --networkid "15" --nodiscover --datadir "./"
 
 geth --datadir "./" attach ipc:\\.\pipe\geth.ipc
 
+geth  --rpc --rpcport 8545 --rpcapi "web3,eth,net,personal" --rpccorsdomain "*" --rpcaddr "0.0.0.0" --datadir "./" --nodiscover --networkid 15
 
