@@ -1,0 +1,9 @@
+geth --datadir ./ init ./g.json
+
+geth --networkid "15" --nodiscover --datadir "./" console 2>> /home/ubuntu/eth_private_net/geth_err.log
+
+geth --networkid "15" --nodiscover --datadir "./"
+
+geth --datadir "./" attach ipc:\\.\pipe\geth.ipc
+
+
