@@ -1,0 +1,1 @@
+solcjs --abi --bin SingleNumRegister.sol

@@ -8,3 +8,40 @@ geth --datadir "./" attach ipc:\\.\pipe\geth.ipc
 
 geth  --rpc --rpcport 8545 --rpcapi "web3,eth,net,personal" --rpccorsdomain "*" --rpcaddr "0.0.0.0" --datadir "./" --nodiscover --networkid 15
 
+
+
+・コントラクトのアドレス
+・コントラクトのABI
+0x20fb99860ad0df03b6e9d793782a0ebc804adcdf
+
+[{
+    constant: true,
+    inputs: [],
+    name: "get",
+    outputs: [{
+        internalType: "int256",
+        name: "",
+        type: "int256"
+    }],
+    payable: false,
+    stateMutability: "view",
+    type: "function"
+}, {
+    constant: false,
+    inputs: [{
+        internalType: "int256",
+        name: "x",
+        type: "int256"
+    }],
+    name: "set",
+    outputs: [],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function"
+}]
+
+var cnt = eth.contract(myContract.abi).at(myContract.address);
+
+
+
+

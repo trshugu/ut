@@ -11,6 +11,7 @@
   "dependencies": {
     "big-integer": "^1.6.47",
     "request": "^2.88.0",
+    "solc": "^0.5.12",
     "web3": "^1.2.1"
   }
 }
