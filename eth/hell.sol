@@ -1,14 +1,16 @@
-pragma solidity >=0.4.22 <0.7.0;
-contract SingleNumRegister {
-  uint storedData;
+pragma solidity ^0.5.9;
+
+contract Hell
+{
+  int num;
   
-  function set(uint x) public
+  function set_num(int n) public
   {
-    storedData = x;
+    num = n;
   }
   
-  function get() public view returns (uint) {
-    uint storedData_ = storedData + 1;
-    return storedData_;
+  function get_num() public returns(int)
+  {
+    return num;
   }
 }

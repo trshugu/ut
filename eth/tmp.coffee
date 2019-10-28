@@ -61,6 +61,14 @@ minerStop = -> new Promise (f,r)->
 
 
 
+abi = [{"constant":true,"inputs":[],"name":"get","outputs":[{"internalType":"uint256","name":"retVal","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"internalType":"uint256","name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}]
+
+myc = "0xc3134c71093cac2a6114bf77c4b8c69f9347a91d"
+
+
+
+
+###
 # "0xc3134c71093cac2a6114bf77c4b8c69f9347a91d"
 fs = require("fs")
 abi = JSON.parse fs.readFileSync("./SingleNumRegister_sol_SingleNumRegister.abi", "utf8")
@@ -79,7 +87,7 @@ puts cont.deploy()
 setInterval ->
   puts cont
 ,1000
-
+###
 
 
 

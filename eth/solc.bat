@@ -1,1 +1,1 @@
-solcjs --abi --bin SingleNumRegister.sol
+solcjs --abi --bin hell.sol
