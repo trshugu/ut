@@ -1,16 +1,16 @@
 pragma solidity ^0.5.9;
 
-contract Hell
+contract hell
 {
-  int num;
+  uint num;
   
-  function set_num(int n) public
+  function pureNum(uint m) public pure returns (uint)
   {
-    num = n;
+    return m;
   }
-  
-  function get_num() public returns(int)
-  {
-    return num;
+
+  function getBool() public pure returns (bool) {
+    return true;
   }
+
 }
