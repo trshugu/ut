@@ -1,0 +1,4 @@
+
+======= hell.sol:Hell =======
+Contract JSON ABI 
+[{"constant":true,"inputs":[],"name":"getBool","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"}]

@@ -1,1 +1,2 @@
-solcjs --abi --bin hell.sol
+solc.exe --abi hell.sol > hell.abi
+solc.exe --bin hell.sol > hell.bin

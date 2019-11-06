@@ -5,14 +5,16 @@ puts = console.log
 
 
 Web3 = require "web3"
+solc = require "solc"
+request = require "request"
 bi = require "big-integer"
+
 ethfy = (w)-> Web3.utils.fromWei w, "ether"
 weify = (w)-> Web3.utils.toWei w, "ether"
 
 w3 =  new Web3()
 w3.setProvider new w3.providers.HttpProvider('http://localhost:8545')
 
-request = require "request"
 
 minerStart = (cpu=1)-> new Promise (f,r)->
   obj = {}
@@ -54,18 +56,151 @@ minerStop = -> new Promise (f,r)->
       f b
 
 
+
+
+
+
+
+# スマートコントラクトのコンパイル
+sol = """
+pragma solidity 0.5.4;
+contract Hell {
+  function getBool() public pure returns(bool) {
+    return true;
+  }
+  
+  uint storedData;
+  function set(uint x) public {
+    storedData = x;
+  }
+  
+  function get() public view returns (uint) {
+    return storedData;
+  }
+  
+}
+"""
+
+input =
+  language: 'Solidity'
+  sources:
+    'hell.sol': 
+      content: sol
+  settings:
+    outputSelection:
+      '*':
+        '*': ['*']
+
+output = JSON.parse(solc.compile(JSON.stringify(input)))
+bin = "0x" + output.contracts["hell.sol"]["Hell"].evm.bytecode.object
+abi = output.contracts["hell.sol"]["Hell"].abi
+
+
+# スマートコントラクトの登録
+deploy = (abi, bin)-> new Promise (f)->
+  await w3.eth.personal.unlockAccount (await w3.eth.getCoinbase()), "1212"
+  await minerStart()
+  
+  myc = await new w3.eth.Contract(abi)
+    .deploy
+      data: bin
+    .send
+      from: (await w3.eth.getCoinbase())
+      gas: (await w3.eth.estimateGas(data:bin))
+  await minerStop()
+  
+  console.log "deploy contract:", myc._address
+  f myc._address
+
+deploy abi, bin
+.then (address)->
+  cont = new w3.eth.Contract(abi, address)
+  console.log await cont.methods.getBool().call()
+  
+  console.log await cont.methods.get().call()
+  
+  await w3.eth.personal.unlockAccount (await w3.eth.getCoinbase()), "1212"
+  
+  await minerStart()
+  
+  tx = await cont.methods.set(4).send
+    from: (await w3.eth.getCoinbase())
+    gas: (await w3.eth.estimateGas(data:bin))
+  console.log tx
+  
+  await minerStop()
+  
+  console.log await cont.methods.get().call()
+  
+  
+
+
+
+
+
+###
+sol = """
+pragma solidity 0.5.4;
+contract Hell {
+  function getBool() public pure returns(bool) {
+    return true;
+  }
+}
+"""
+
+input =
+  language: 'Solidity'
+  sources:
+    'hell.sol': 
+      content: sol
+  settings:
+    outputSelection:
+      '*':
+        '*': ['*']
+
+output = JSON.parse(solc.compile(JSON.stringify(input)))
+bin = "0x" + output.contracts["hell.sol"]["Hell"].evm.bytecode.object
+abi = output.contracts["hell.sol"]["Hell"].abi
+
+
+Promise.resolve().then ->
+  opt = 
+    from: (await w3.eth.getCoinbase())
+    gas: (await w3.eth.estimateGas(data:bin))
+    data: bin
+  
+  cont = new w3.eth.Contract(abi, opt)
+  
+  await w3.eth.personal.unlockAccount (await w3.eth.getCoinbase()), "1212"
+  await minerStart()
+  myc = await cont.deploy().send(opt)
+  await minerStop()
+  
+  console.log myc._address
+  
+  # =====
+  cont = new w3.eth.Contract(abi, myc._address)
+  console.log await cont.methods.getBool().call()
+###
+
+
+
+###
 # minerStart()
 # minerStop()
 
 
+abi = [{"constant":true,"inputs":[],"name":"getBool","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"pure","type":"function"}]
+myc = "0x7753123f35cfd9eaf3fd82588559e94bbaed7a5e"
+cont = new w3.eth.Contract(abi, myc)
+cont.methods.getBool().call().then (v)->
+  console.log "1",v
 
-
-
-abi = [{"constant":true,"inputs":[],"name":"get","outputs":[{"internalType":"uint256","name":"retVal","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"internalType":"uint256","name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"}]
-
-myc = "0xc3134c71093cac2a6114bf77c4b8c69f9347a91d"
-
-
+Promise.resolve()
+.then ->
+  y = await cont.methods.getBool().call()
+  console.log "2",y
+###
 
 
 ###
