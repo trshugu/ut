@@ -1,0 +1,12 @@
+geth --testnet --fast --bootnodes "enode://7df4f8fa037f82cc03ba0c1acd3fccba4ae40fc03704283979f074cadf37cc5b70845d1acee4161c3432eb6934ba3020cbaf9cc2ba841cdfb03d113ebeef5b79@172.104.5.185:30303" console 2>> ./geth.log
+
+roptest
+["0xc8cdbfb7c86730748cc6dce912a1f66c91bbf9f0"]
+{"address":"c8cdbfb7c86730748cc6dce912a1f66c91bbf9f0","crypto":{"cipher":"aes-128-ctr","ciphertext":"3b20c5857d22a19b3934ced9443935709ad3b1be3a4000d95f478e18e2f78ad9","cipherparams":{"iv":"a4da55c1316f4d0df664427defcb2d1d"},"kdf":"scrypt","kdfparams":{"dklen":32,"n":262144,"p":1,"r":8,"salt":"13bbf98eb0b78e8bb0123b3f6b5bd28d3a1bcc0081c7ecdedab5988c7d715e8c"},"mac":"b4b85663d690135d7653b93a83e03b0237adee6babfb313cb5ba3f288d6e4189"},"id":"1950eca4-201c-4652-a537-1bdf19c0ca2f","version":3}
+A588440881E9C37F199E67B7EAECABB3B86C39622079056207559FB23EA654CD
+
+personal.unlockAccount("0xc8cdbfb7c86730748cc6dce912a1f66c91bbf9f0", "12121212")
+st = eth.sendTransaction({from: "0xc8cdbfb7c86730748cc6dce912a1f66c91bbf9f0", to: "0x8623057c611e830651d7ef468016ada24385f31e", value: web3.toWei(1, "ether")})
+
+
+

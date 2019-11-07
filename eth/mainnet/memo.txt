@@ -1,0 +1,12 @@
+geth --datadir "/home/ubuntu/mainnet_data" 2>> /home/ubuntu/mainnet_data/e01.log &
+テスト・ネットに接続した際のコマンドとの違いは、--networkid、--nodiscover と --genesis のオプションを付加していないこと
+
+geth --datadir "./"
+
+
+net.peerCount
+自分のノードがいくつのノードと接続しているか
+
+実際に接続されているノードの情報はadmin.peers
+
+
