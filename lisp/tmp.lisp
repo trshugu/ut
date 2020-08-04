@@ -1,11 +1,12 @@
-#lang racket
 #|
+(print )
 |#
 
 
 
 
 
+(define x 128)
 
 
 
@@ -39,7 +40,7 @@
 
 
 #|
-; timeマクロ
+; time�}�N��
 (time
   (printf "aaa"))
 |#
@@ -198,7 +199,7 @@ null '()
 
 
 #|
-; consはリストを作る関数
+; cons�̓��X�g�����֐�
 (cons 'pine '(fir oak maple))
 |#
 
@@ -212,15 +213,15 @@ null '()
 
 
 #|
-; cdr はリストの残りの部分
+; cdr �̓��X�g�̎c��̕���
 (cdr '(rose violet daisy buttercup))
 
-; car とはそのリストの最初の要素
+; car �Ƃ͂��̃��X�g�̍ŏ��̗v�f
 (car '(rose violet daisy buttercup))
 |#
 
 #|
-; 1次元配列の生成 NG
+; 1�����z��̐��� NG
 (make-array 5)
 |#
 
