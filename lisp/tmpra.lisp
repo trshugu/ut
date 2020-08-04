@@ -8,6 +8,7 @@
 
 
 
+#|
 (define (zero) '())
 (define (inc n) (cons 'o n))
 (define (dec n) (cdr n))
@@ -77,6 +78,7 @@
 )
 
 ;(define (muli x y n)  (if (null? y)    n    (muli      x      (dec y)      (add n x)    )  ))
+|#
 
 
 
